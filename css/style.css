@@ -277,7 +277,6 @@ main {
 
 .single .character__avatar {
     width: 400px;
-    min-width: 250px;
     height: auto;
     overflow: hidden;
     border: 10px solid #fafd7cff;
@@ -286,8 +285,8 @@ main {
 
 .single .character__avatar img {
     position: relative;
-    width: 400px;
-    height: auto;
+    width: inherit;
+    height: inherit;
 }
 
 .single .character__info .info-item {
@@ -364,4 +363,14 @@ main {
         flex-direction: column;
     }
 
+
+    .single .character__container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .single .character__avatar {
+        width: 200px;
+        height: 200px;
+    }
 }
