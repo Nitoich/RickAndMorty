@@ -11,6 +11,11 @@ getCharacters.onload = function() {
 
     for(i = 0; i < results.length; i++) {
         characters__item = document.createElement('div');
+        characters__item.id = results[i].id
+        characters__item.addEventListener('click', function(event) {
+            sessionStorage.setItem('char_id', this.id);
+            window.location.href = "single.html"
+        });
         characters__item.classList.add('characters__item');
         characters__item.innerHTML = '' + 
         '<div class="character">' +
