@@ -8,6 +8,13 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+
+        <div class="modal active">
+            <div class="modal__content">
+                <div class="modal__loader"></div>
+            </div>
+        </div>
+
         <div class="background">
             <img src="img/background.jpg" alt="Background">
         </div>
@@ -33,8 +40,18 @@
             </div>
         </header>
 
-        <main>
-
+        <main class="characters-page">
+            <div class="wrapper">
+                <div class="index__content">
+                    <h1 class="title">Characters</h1>
+                    <div class="characters">
+                        <div class="characters__list">
+                            <!--Characters-->
+                        </div>
+                        <button id="getNextPage">Get More</button>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <footer class="footer">
@@ -57,5 +74,7 @@
 
         <script src="js/modal_function.js"></script>
         <script src="js/mainfunction.js"></script>
+        <script src="js/loadCharacters.js"></script>
+        <script src="js/characters.js"></script>
     </body>
 </html>

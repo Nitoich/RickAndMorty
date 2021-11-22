@@ -205,6 +205,7 @@ background: linear-gradient(90deg, rgba(0,212,255,1) 20%, rgba(23,242,6,1) 50%, 
 
 .title {
     text-align: center;
+    color: white;
 }
 
 .title a {
@@ -295,7 +296,8 @@ background: linear-gradient(90deg, rgba(0,212,255,1) 20%, rgba(23,242,6,1) 50%, 
 
 .single .character__avatar {
     width: 400px;
-    height: auto;
+    height: 400px;
+    box-sizing: border-box;
     overflow: hidden;
     border: 10px solid #fafd7cff;
     border-radius: 20px;
@@ -312,6 +314,25 @@ background: linear-gradient(90deg, rgba(0,212,255,1) 20%, rgba(23,242,6,1) 50%, 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     line-height: 40px;
+}
+
+/* CHARACTERS */
+
+#getNextPage {
+    width: 100%;
+    padding: 10px 0;
+    background: #fafd7cff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#getNextPage:hover {
+    opacity: 0.9;
+}
+
+#getNextPage:active {
+    opacity: 0.8;
 }
 
 
