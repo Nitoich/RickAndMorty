@@ -188,6 +188,11 @@ main {
     padding: 20px 0;
 }
 
+.header__content .header__logo img{
+    width: 100%;
+    height: auto;
+}
+
 .footer {
     min-height: 40px;
 }
