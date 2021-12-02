@@ -253,6 +253,8 @@ background: linear-gradient(90deg, rgba(0,212,255,1) 20%, rgba(23,242,6,1) 50%, 
     pointer-events: none;
 }
 
+
+
 .character {
     transform-style: preserve-3d;
     transition: transform 0.2s;
@@ -478,4 +480,8 @@ background: linear-gradient(90deg, rgba(0,212,255,1) 20%, rgba(23,242,6,1) 50%, 
         width: 200px;
         height: 200px;
     }
+}
+
+.display-none {
+    display: none;
 }

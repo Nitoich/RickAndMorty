@@ -15,14 +15,19 @@ for (i = 0; i < 5; i++) {
             <div class="episode_desc">
                 <p>Release Date: ${info.air_date}</p>
                 <p>Episode: ${info.episode}</p>
-                <button>Find characters</button>
+                <button value="${info.url}">Find characters</button>
             </div>
         </div>
         `;
 
         episodeItem.querySelector('.episode__name').addEventListener('click', function(event) {
             this.parentNode.classList.toggle('active');
-        })
+        });
+
+        episodeItem.querySelector('button').addEventListener('click', function(event) {
+            sessionStorage.setItem('urlEpisode', this.getAttribute('value'));
+            window.location.href = 'singleEpisode.html';
+        });
 
         document.querySelector('ul.episodes__list').append(episodeItem);
     }
