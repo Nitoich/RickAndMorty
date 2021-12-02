@@ -1,5 +1,9 @@
 * { margin: 0; padding: 0;}
 
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .gradient-link:hover {
     color: transparent;
     -webkit-background-clip: text;
@@ -347,6 +351,56 @@ background: linear-gradient(90deg, rgba(0,212,255,1) 20%, rgba(23,242,6,1) 50%, 
     opacity: 0.8;
 }
 
+/* Episodes */
+
+.episodes__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.episodes__item {
+    padding: 10px;
+    box-sizing: border-box;
+    background: #2626269f;
+    margin: 5px 0;
+}
+
+.episode__name {
+    font-size: 18px;
+    line-height: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.episode__content {
+    color: white;
+    height: 24px;
+    overflow: hidden;
+    transition: height 0.5s ease;
+    -webkit-transition: height 0.3s ease;
+    -moz-transition: height 0.3s ease;
+    -ms-transition: height 0.3s ease;
+    -o-transition: height 0.3s ease;
+    transition: height 0.3s ease;
+}
+
+.episode__content.active {
+    height: 120px;
+}
+
+.episode_desc > * {
+    margin: 5px 0;
+}
+
+.episode_desc > button {
+    width: 100%;
+    padding: 10px 0;
+    background: #fafd7cff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    
+}
 
 /* ADAPTIVE */
 

@@ -20,3 +20,7 @@ document.querySelectorAll('a.gradient-link').forEach(el => {
         this.style.backgroundImage = '';
     });
 });
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
