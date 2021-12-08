@@ -8,6 +8,8 @@ function getOnePage(page) {
     getCharacters.onload = function() {
         let results = getCharacters.response.results;
 
+        let countPage = getCharacters.response.info.pages;
+
         for(i = 0; i < results.length; i++) {
             characters__item = document.createElement('div');
             characters__item.id = results[i].id

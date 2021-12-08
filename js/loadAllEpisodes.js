@@ -8,7 +8,7 @@ function getEpisodes(page) {
     request.send();
     request.onload = function() {
         data = request.response.results;
-        countPage = data.pages;
+        countPage = request.response.info.pages;
         for(i = 0; i < data.length; i++) {
             episode__card = document.createElement('li')
             episode__card.classList.add('episodes__item');
@@ -24,6 +24,12 @@ function getEpisodes(page) {
             `;
     
             episode__card.querySelector('.episode__name').addEventListener('click', function(event) {
+                var element = this;
+                document.querySelectorAll('.episode__name').forEach(el => {
+                    if (el != element) {
+                        el.parentNode.classList.remove('active');
+                    }
+                });
                 this.parentNode.classList.toggle('active');
             });
     
