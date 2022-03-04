@@ -6,9 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>RickAndMorty</title>
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://unpkg.com/vue@3"></script>
     </head>
     <body>
-        <div class="modal active">
+        <div class="modal">
             <div class="modal__content">
                 <div class="modal__loader"></div>
             </div>
@@ -44,8 +45,8 @@
                 <div class="index__content">
                     <div class="characters">
                         <h1 class="title"><a href="characters.html">Characters</a></h1>
-                        <div class="characters__list">
-                            <!--Characters-->
+                        <div class="characters__list" id="characterList">
+                            
                         </div>
                     </div>
                 </div>
@@ -88,14 +89,10 @@
             </div>
         </footer>
 
-        <script src="js/modal_function.js"></script>
-        <script src="js/loadCharacters.js"></script>
-        <script src="js/mainfunction.js"></script>
-        <script>
-            getOnePage(getRandomInt(41) + 1);
-        </script>
-        <script src="js/loadEpisodes.js"></script>
 
+
+
+        <script type="module" src="js/vue/index.js"></script>
         
     </body>
 </html>
