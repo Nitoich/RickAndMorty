@@ -21,7 +21,7 @@ export default {
             let halfWidth = character.offsetWidth / 2;
 
             character.style.transform = 'rotateX(' + -(event.offsetY - halfHeight) / 5 + 'deg) rotateY(' + (event.offsetX - halfWidth) / 5 + 'deg)';
-        }
+        },
     },
     template: `
     <div class="characters__item" :class="{hovering : isHovering}" @mouseenter="hoverToggle" @mouseleave="hoverToggle" @mousemove="animate">
