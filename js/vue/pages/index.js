@@ -1,4 +1,5 @@
 import CharactersList from "../templates/charactersList.js";
+import EpisodesList from "../templates/episodesList.js";
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -11,7 +12,8 @@ const indexVuePage = Vue.createApp({
         }
     },
     components: {
-        CharactersList
+        CharactersList,
+        EpisodesList
     },
     template: `
 <div class="wrapper">
@@ -25,9 +27,7 @@ const indexVuePage = Vue.createApp({
     <div class="index__content">
         <div class="episodes">
             <h1 class="title"><a href="episodes.html">Episodes</a></h1>
-            <ul class="episodes__list">
-                
-            </ul>
+            <EpisodesList  />
         </div>
     </div>
 </div>

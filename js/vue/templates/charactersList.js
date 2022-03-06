@@ -1,5 +1,4 @@
 import characterCard from "../components/characterCard.js";
-import NavLink from "../components/NavLink.js";
 
 export default {
     data() {
@@ -19,7 +18,6 @@ export default {
     },
     components: {
         characterCard,
-        NavLink
     },
     template: `
             <div class="characters__list">
