@@ -1,8 +1,10 @@
+import {HashRouter} from "../Router.js";
+
 export default {
     props: ['url', 'text'],
     methods: {
         click(event) {
-            HashRouter.locationResolver(this.data.href);
+            HashRouter.locationResolver(this.url);
         }
     },
     template: `
