@@ -1,5 +1,12 @@
-import CurrentPages from "../Router.js";
-import {HashRouter} from "../Router.js";
+import Main from "./main.js";
+import Error from "./404.js";
 
-console.log(CurrentPages);
-const indexVuePage = Vue.createApp(CurrentPages).mount('#index');
+new HashRouter().defaultCB = () => {
+    window.indexVuePage = Vue.createApp(Error).mount('#index');
+};
+
+new HashRouter().addPath('#/', () => {
+    console.log('home');
+    window.indexVuePage = Vue.createApp(Main).mount('#index');
+});
+
