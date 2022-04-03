@@ -1,5 +1,6 @@
 import Main from "./main.js";
 import Error from "./404.js";
+import Characters from "./characters.js";
 
 
 
@@ -14,4 +15,8 @@ new HashRouter().defaultCB = () => {
 
 new HashRouter().addPath('#/', () => {
     loadVuePage(Main);
+});
+
+new HashRouter().addPath('#/characters', () => {
+    loadVuePage(Characters);
 });
