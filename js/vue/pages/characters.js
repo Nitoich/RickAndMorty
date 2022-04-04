@@ -1,5 +1,4 @@
 
-import CharactersList from "../templates/charactersList.js";
 import characterCard from "../components/characterCard.js";
 
 export default {
@@ -21,34 +20,26 @@ export default {
     },
 
     components: {
-        CharactersList,
         characterCard
     },
 
     methods: {
-        nextPage() {
-            if (this.currentPage != this.maxPages) {
-                console.log(this.maxPages)
-                this.currentPage++;
-            }
-        },
-        previousPage() {
-            if (this.currentPage != 1) {
-                console.log(this.maxPages)
-                this.currentPage--;
-            }
-        }
-    },
-
-    watch: {
-        currentPage: function() {
+        getNextPage() {
+            this.currentPage++;
             fetch('https://rickandmortyapi.com/api/character/?page=' + this.currentPage)
                 .then(res => {return res.json()})
                 .then(res => {
                     this.maxPages = res.info.pages;
-                    this.characters = res.results;
-                    console.log(this.characters)
-                });
+                    res.results.forEach(el => {
+                        this.characters.push(el);
+                    })
+                })
+        }
+    },
+
+    computed: {
+        activeGetMoreButton: function () {
+            return this.currentPage == this.maxPages;
         }
     },
 
@@ -56,13 +47,12 @@ export default {
     <div class="wrapper">
         <div class="index__content">
             <div class="characters">
-            <button @click="nextPage()">+</button>
-            <button @click="previousPage()">-</button>
-                <h1 class="title"><a href="characters.html">Characters(Page: {{ this.currentPage }})</a></h1>
+                <h1 class="title"><a href="characters.html">Characters</a></h1>
                 <div class="characters__list">
                     <characterCard :name="character.name" :imgUrl="character.image" v-for="character in characters"/>
                 </div>   
-            </div>  
+            </div>
+            <button id="getNextPage" @click="getNextPage()" :disabled="this.activeGetMoreButton">GET MORE</button>  
         </div> 
     </div>
     
