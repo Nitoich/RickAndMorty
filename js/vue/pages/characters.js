@@ -49,7 +49,7 @@ export default {
             <div class="characters">
                 <h1 class="title"><a href="characters.html">Characters</a></h1>
                 <div class="characters__list">
-                    <characterCard :name="character.name" :imgUrl="character.image" v-for="character in characters"/>
+                    <characterCard :ids="character.id" :name="character.name" :imgUrl="character.image" v-for="character in characters"/>
                 </div>   
             </div>
             <button id="getNextPage" @click="getNextPage()" :disabled="this.activeGetMoreButton">GET MORE</button>  

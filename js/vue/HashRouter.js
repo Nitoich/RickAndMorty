@@ -62,8 +62,34 @@ class HashRouter {
             if(route.path == location) {
                 route.cb();
                 finded = true;
+                return true;
             }
         });
+
+        this.routes.forEach(route => {
+            if (route.path.includes('{')) {
+                let locationNonePar = location.split('/');
+                let newLocation = '';
+                // locationNonePar.forEach(el => {
+                //     if(!el.includes('{')) {
+                //         newLocation = newLocation + el + '/';
+                //     }
+                // })
+
+                for (let i = 0; i < locationNonePar.length - 1; i++) {
+                    newLocation = newLocation + locationNonePar[i] + '/'
+                }
+                let pathNonePar = route.path.slice(0, route.path.indexOf('{'));
+
+                console.log(newLocation);
+                console.log(pathNonePar);
+                if (newLocation === pathNonePar) {
+                    route.cb(location.split('/')[location.split('/').length - 1]);
+                    finded = true;
+                }
+                // route.cb(newLocation);
+            }
+        })
 
         if(!finded) {
             this.defaultCB();

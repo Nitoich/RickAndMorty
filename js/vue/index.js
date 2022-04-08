@@ -1,6 +1,7 @@
 import Main from "./pages/main.js";
 import Error from "./pages/404.js";
 import Characters from "./pages/characters.js";
+import Character from "./pages/character.js";
 
 function loadVuePage(Page) {
     const Empty = {};
@@ -20,4 +21,10 @@ Router.addPath('#/', () => {
 
 Router.addPath('#/characters', () => {
     loadVuePage(Characters);
+});
+
+Router.addPath('#/characters/{id}', (id) => {
+    console.log(id);
+    localStorage.setItem('character_id', id);
+    loadVuePage(Character);
 });

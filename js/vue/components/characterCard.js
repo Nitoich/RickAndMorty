@@ -4,7 +4,7 @@ export default {
             isHovering: false,
         }
     },
-    props: ['name', 'imgUrl'],
+    props: ['ids','name', 'imgUrl'],
     methods: {
         setDefaultRotate(el) {
             el.style.transform = 'rotateX(0) rotateY(0)';
@@ -22,10 +22,13 @@ export default {
 
             character.style.transform = 'rotateX(' + -(event.offsetY - halfHeight) / 5 + 'deg) rotateY(' + (event.offsetX - halfWidth) / 5 + 'deg)';
         },
+        goToPage() {
+            window.location.hash = '#/characters/' + this.ids;
+        }
     },
     template: `
     <div class="characters__item" :class="{hovering : isHovering}" @mouseenter="hoverToggle" @mouseleave="hoverToggle" @mousemove="animate">
-        <div class="character" ref="animateEl">
+        <div class="character" ref="animateEl" @click="this.goToPage()">
             <div class="character__avatar">
                 <img :src="imgUrl" alt="Avatar">
             </div>

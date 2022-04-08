@@ -21,7 +21,7 @@ export default {
     },
     template: `
             <div class="characters__list">
-                <characterCard :name="character.name" :imgUrl="character.image" v-for="character in characters"/>
+                <characterCard :ids="character.id" :name="character.name" :imgUrl="character.image" v-for="character in characters"/>
             </div>
     `,
 };
