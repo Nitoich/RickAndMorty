@@ -47,7 +47,7 @@ export default {
     <div class="wrapper">
         <div class="index__content">
             <div class="characters">
-                <h1 class="title"><a href="characters.html">Characters</a></h1>
+                <h1 class="title"><a href="#/characters">Characters</a></h1>
                 <div class="characters__list">
                     <characterCard :ids="character.id" :name="character.name" :imgUrl="character.image" v-for="character in characters"/>
                 </div>   
